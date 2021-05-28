@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import dayjs from 'dayjs';
-const Weather = ({city_name}) => {
+const Weather = ({city_name, color_name}) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true)
 
@@ -29,12 +29,10 @@ const Weather = ({city_name}) => {
 
   return (
     <div className="p-4">
-      <div
-        className="bg-gradient-to-r from-blue-500 to-blue-300
+      <div className={`bg-gradient-to-r from-${color_name}-500 to-${color_name}-300
                 w-96 h-56 m-auto rounded-xl shadow-2xl 
                 transform hover:scale-110 transition-transform
-                text-white relative"
-      >
+                text-white relative`}>
         <div className="w-full px-8 absolute top-6">
           <div className="flex justify-between">
             <div>
